@@ -10,7 +10,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='text-3xl'>
-      Boiler Plate for TypeScript Project
+      Boiler Plate for TypeScript & Next Js Project <br />
+      With Installed The Tailwind Css and <br /> Mui With Cutomized theme of MUI.
+      Happy Coading
+
+      </div>
+      <div className='text-5xl text-bold m-4 p-5 border-dashed border-4 border-pink-500'>
+        Good Luck For Your Next Project
       </div>
 
     </div>
