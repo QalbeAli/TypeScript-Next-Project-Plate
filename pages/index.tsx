@@ -13,7 +13,9 @@ const Home: NextPage = () => {
       Boiler Plate for TypeScript & Next Js Project <br />
       With Installed The Tailwind Css and <br /> Mui With Cutomized theme of MUI.
       Happy Coading
-
+      </div>
+      <div className=' py-3 scale-150'>
+      😎😉💖
       </div>
       <div className='text-5xl text-bold m-4 p-5 border-dashed border-4 border-pink-500'>
         Good Luck For Your Next Project
