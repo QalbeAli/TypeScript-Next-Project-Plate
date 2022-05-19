@@ -1,4 +1,4 @@
-export default function Navbar() {
+export default function Header() {
     return(
         <>
         <div className="text-3xl text-bold">
