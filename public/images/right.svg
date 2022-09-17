@@ -1,0 +1,7 @@
+        <svg version="1.1" id="right-arrow" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                viewBox="1 0 41 41" enable-background="new 1 0 41 41" xml:space="preserve">
+        <circle fill="#FFFFFF" stroke="#E7EAF1" cx="21.5" cy="20.5" r="20" />
+        <path fill="none" stroke="#A3A1B1" stroke-linecap="round" stroke-linejoin="round" d="M22.2,16l4.8,4.8" />
+        <path fill="none" stroke="#A3A1B1" stroke-linecap="round" stroke-linejoin="round" d="M22.2,25.6l4.8-4.8" />
+        <path fill="none" stroke="#A3A1B1" stroke-linecap="round" stroke-linejoin="round" d="M14.7,20.8H27" />
+        </svg>
