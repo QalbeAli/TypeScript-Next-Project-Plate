@@ -1,16 +1,16 @@
-import Header from '../Header/Index'
+import Header from '../Header/header'
 
 export default function Hero() {
   return (
     <>
-      <div>
+      <div className="h-[70vh] bg-red-500">
         <div
           className="vcenterFlex filters-container home relative mt-20 w-full lg:mt-0"
           style={{
             backgroundImage: `url(images/main.jpg)`,
           }}
         >
-          <Header marginLeft="4rem" />
+          {/* <Header marginLeft="4rem" /> */}
 
           <div className="container">
             <h1 className="HomeBannerText mb-0 text-center text-3xl text-white md:text-4xl xl:mb-4 2xl:text-5xl">

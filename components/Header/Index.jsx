@@ -1,389 +1,414 @@
-import Image from 'next/image'
-import Images from '../../public/images/Images'
+/* This example requires Tailwind CSS v2.0+ */
+import { Fragment } from 'react'
+import { Popover, Transition } from '@headlessui/react'
+import {
+  ArrowPathIcon,
+  Bars3Icon,
+  BookmarkSquareIcon,
+  CalendarIcon,
+  ChartBarIcon,
+  CursorArrowRaysIcon,
+  LifebuoyIcon,
+  PhoneIcon,
+  PlayIcon,
+  ShieldCheckIcon,
+  Squares2X2Icon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+
+const solutions = [
+  {
+    name: 'Home',
+    description:
+      'Get a better understanding of where your traffic is coming from.',
+    href: '#',
+    icon: ChartBarIcon,
+  },
+  {
+    name: 'Land',
+    description: 'Speak directly to your customers in a more meaningful way.',
+    href: '#',
+    icon: CursorArrowRaysIcon,
+  },
+  {
+    name: 'Commercial Property',
+    description: "Your customers' data will be safe and secure.",
+    href: '#',
+    icon: ShieldCheckIcon,
+  },
+  {
+    name: 'Flat and Apartment',
+    description: "Connect with third-party tools that you're already using.",
+    href: '#',
+    icon: Squares2X2Icon,
+  },
+  {
+    name: 'Student Accommodation',
+    description:
+      'Build strategic funnels that will drive your customers to convert',
+    href: '#',
+    icon: ArrowPathIcon,
+  },
+]
+const callsToAction = [
+  { name: 'Watch Demo', href: '#', icon: PlayIcon },
+  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
+]
+const resources = [
+  {
+    name: 'Help Center',
+    description:
+      'Get all of your questions answered in our forums or contact support.',
+    href: '#',
+    icon: LifebuoyIcon,
+  },
+  {
+    name: 'Guides',
+    description:
+      'Learn how to maximize our platform to get the most out of it.',
+    href: '#',
+    icon: BookmarkSquareIcon,
+  },
+  {
+    name: 'Events',
+    description:
+      'See what meet-ups and other events we might be planning near you.',
+    href: '#',
+    icon: CalendarIcon,
+  },
+  {
+    name: 'Security',
+    description: 'Understand how we take your privacy seriously.',
+    href: '#',
+    icon: ShieldCheckIcon,
+  },
+]
+const recentPosts = [
+  { id: 1, name: 'Boost your conversion rate', href: '#' },
+  {
+    id: 2,
+    name: 'How to use search engine optimization to drive traffic to your site',
+    href: '#',
+  },
+  { id: 3, name: 'Improve your customer experience', href: '#' },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 export default function Header() {
   return (
-    <>
-      <header className=" header-home flex items-center  justify-between pt-[40rem] ">
-        <div
-          className="Header container absolute top-0 bg-black"
-          style={{ zIndex: '70' }}
-        >
-          <nav className="nav-hamburger  lg:hidden">
-            <div
-              id="mobileMainNavBtn"
-              className="absolute top-6 left-6 z-30"
-              style={{ ZIndex: '90' }}
-            >
-              {/* <Image src={Images.hamburger} layout="fill" className="h-7 w-7" /> */}
-            </div>
-            <div
-              id="mobileProfileNavBtn"
-              className="absolute right-6 z-30"
-              style={{ top: '1.41rem', zIndex: '90' }}
-            >
-              {/* <Image
-                style={{ width: '30.4px', height: '30.4px' }}
-                src={Images.user2}
-                layout="fill"
+    <Popover className="relative ">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+          <div className="flex justify-start lg:flex-1">
+            <a href="#">
+              <span className="sr-only text-red-300">Your Company</span>
+              <h1>Logo Here</h1>
+              {/* <img
+                className="h-8 w-auto sm:h-10"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                alt=""
               /> */}
-            </div>
-            <div
-              id="mobileMainNav"
-              className="fixed -left-full top-20 z-20 hidden bg-white p-5 transition-all"
-              style={{
-                width: '300px',
-                borderTop: '1px #ebeff2 solid',
-                boxShadow: '4px 4px 15px rgba(0, 0, 0, 0.1)',
-                overflow: 'scroll',
-              }}
-            >
-              <button
-                type="button"
-                id="loginlink"
-                className="submit mb-6 w-full py-2"
-              >
-                Sign In
-              </button>
-              <a
-                href="/property-for-sale"
-                className="mb-4 block"
-                style={{ color: '#384e85' }}
-              >
-                {/* <Image
-                  src={Images.one}
-                  layout="fill"
-                  className="mr-2.5 inline-block"
-                  style={{
-                    width: '1.25rem',
-                    position: 'relative',
-                    bottom: '1px',
-                  }}
-                /> */}
-                For Sale
-              </a>
-              <a
-                href="/property-for-rent"
-                className="mb-4 block"
-                style={{ color: '#384e85' }}
-              >
-                {/* <Image
-                  src={Images.two}
-                  layout="fill"
-                  className="mr-2.5 inline-block"
-                  style={{
-                    width: '1.25rem',
-                    position: 'relative',
-                    bottom: '1px',
-                  }}
-                /> */}
-                For Rent
-              </a>
-              <a
-                href="/development-projects"
-                className="block"
-                style={{ color: '#384e85' }}
-              >
-                {/* <Image
-                  src={Images.project}
-                  layout="fill"
-                  className="mr-2 inline-block"
-                  style={{
-                    width: '1.375rem',
-                    position: 'relative',
-                    bottom: '1px',
-                  }}
-                /> */}
-                Projects
-              </a>
-              <a
-                href="/showdays"
-                className="relative mt-4 block"
-                style={{ color: '#384e85' }}
-              >
-                {/* <Image
-                  src={Images.project}
-                  className="mr-2 inline-block"
-                  style={{
-                    width: '1.375rem',
-                    position: 'relative',
-                    bottom: ' 1px',
-                  }}
-                /> */}
-                Showdays
-                <span
-                  className="highlight-new highlight-showdays-mobile"
-                  style={{ left: '7.125rem' }}
-                >
-                  New
-                </span>
-              </a>
-              <div className="relative py-4">
-                <div
-                  className="seperator absolute -left-5"
-                  style={{
-                    height: '1px',
-                    width: '300px',
-                    background: '#ebeff2',
-                  }}
-                ></div>
-              </div>
-              <a
-                className="dropdown-toggle mb-4 block"
-                style={{ color: '#384e85' }}
-              >
-                {/* <Image
-                  src={Images.settings}
-                  className="mr-2.5 inline-block"
-                  style={{
-                    width: '1.25rem',
-                    position: 'relative',
-                    bottom: '1px',
-                  }}
-                /> */}
-                Currency
-              </a>
-              <div
-                className="relative -top-3 hidden pl-9"
-                style={{ display: 'none' }}
-              >
-                <a href="" className="text-graypurpledark block py-1">
-                  USD
-                </a>
-                <a href="" className="text-graypurpledark block py-1">
-                  ZWL
-                </a>
-              </div>
-            </div>
-          </nav>
-          <nav
-            className="nav-desktop absolute hidden justify-between text-white lg:flex"
-            style={{ width: '1050px', top: '2rem' }}
-          >
-            <div className="flex">
-              {/* <div>
-                <a
-                  id="HeaderLogoHome"
-                  className="vcenterFlex h-full"
-                  style={{ marginRight: '2rem', maxHeight: '3.75rem' }}
-                  href="/"
-                >
-                  <Image
-                    src={Images.property}
-                    className=""
-                    alt="Property.co.zw"
-                  />
-                </a>
-              </div> */}
-              <div className="vcenterFlex">
-                <div className="top-item relative">
-                  <a
-                    href="/property-for-sale"
-                    className="menu-pad inline-block px-4"
+            </a>
+          </div>
+          <div className="-my-2 -mr-2 md:hidden">
+            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <span className="sr-only">Open menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </Popover.Button>
+          </div>
+          <Popover.Group as="nav" className="hidden space-x-10 md:flex">
+            <Popover className="relative">
+              {({ open }) => (
+                <>
+                  <Popover.Button
+                    className={classNames(
+                      open ? 'text-gray-900' : 'text-gray-500',
+                      'group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                    )}
                   >
-                    For Sale ▾
-                  </a>
-                  <div className="sub-item shadow-darker text-graypurpledark invisible absolute left-2 whitespace-nowrap rounded-md bg-white opacity-0 transition-all">
-                    <a
-                      href="/houses-for-sale"
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Houses
-                    </a>
-                    <a
-                      href="/land-for-sale"
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Land
-                    </a>
-                    <a
-                      href="/commercial-property-for-sale"
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Commercial Property
-                    </a>
-                    <a
-                      href="/flats-apartments-for-sale"
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Flats &amp; Apartments
-                    </a>
-                  </div>
-                </div>
-                <div className="top-item relative">
-                  <a
-                    href="/property-for-rent"
-                    className="menu-pad inline-block px-4"
-                  >
-                    For Rent ▾
-                  </a>
-                  <div className="sub-item shadow-darker text-graypurpledark invisible absolute left-2 whitespace-nowrap rounded-md bg-white opacity-0 transition-all">
-                    <a
-                      href="/houses-for-rent"
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Houses
-                    </a>
-                    <a
-                      href="/commercial-property-for-rent"
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Commercial Property
-                    </a>
-                    <a
-                      href="/rooms-for-rent"
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Rooms
-                    </a>
-                    <a
-                      href="/flats-apartments-for-rent"
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Flats &amp; Apartments
-                    </a>
-                    <a
-                      href="/land-for-rent"
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Land
-                    </a>
-                    <a
-                      href="/student-accommodation-for-rent"
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Student Accommodation
-                    </a>
-                  </div>
-                </div>
-                <div className="top-item">
-                  <a
-                    href="/development-projects"
-                    className="menu-pad inline-block px-4"
-                  >
-                    Projects
-                  </a>
-                </div>
-                <div className="top-item relative">
-                  <a href="/services" className="menu-pad inline-block px-4">
-                    Services ▾
-                  </a>
-                  <div className="sub-item shadow-darker text-graypurpledark invisible absolute left-2 whitespace-nowrap rounded-md bg-white opacity-0 transition-all">
-                    <a
-                      href="/homeloan"
-                      className="hover:bg-primary block py-2.5 px-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Home loan
-                    </a>
-                    <a
-                      href="/insurance"
-                      className="hover:bg-primary block py-2.5 px-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Insurance
-                    </a>
-                    <a
-                      href="/valuation"
-                      className="hover:bg-primary block py-2.5 px-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Valuation
-                    </a>
-                    <a
-                      href="/internet"
-                      className="hover:bg-primary block py-2.5 px-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Internet
-                    </a>
-                    <a
-                      href="/energy"
-                      className="hover:bg-primary block py-2.5 px-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Energy
-                    </a>
-                  </div>
-                </div>
-                <div className="top-item relative">
-                  <a href="/blog" className="menu-pad inline-block px-4">
-                    Blog ▾
-                  </a>
-                  <div className="sub-item shadow-darker text-graypurpledark invisible absolute left-2 whitespace-nowrap rounded-md bg-white opacity-0 transition-all">
-                    <a
-                      href="/blog"
-                      className="hover:bg-primary block py-2.5 px-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      News
-                    </a>
-                    <a
-                      href="/magazine"
-                      className="hover:bg-primary block py-2.5 px-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      Magazine
-                    </a>
-                  </div>
-                </div>
-                <div className="top-item relative">
-                  <a href="/showdays" className="menu-pad inline-block px-4">
-                    Showdays
-                  </a>
-                  <span
-                    className="highlight-new"
-                    style={{ right: '-1.5625rem' }}
-                  >
-                    New
-                  </span>
-                </div>
-              </div>
-            </div>
+                    <span>Fro Sale</span>
+                    <ChevronDownIcon
+                      className={classNames(
+                        open ? 'text-gray-600' : 'text-gray-400',
+                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                      )}
+                      aria-hidden="true"
+                    />
+                  </Popover.Button>
 
-            <div className=" flex">
-              <div className="vcenterFlex z-20">
-                <div className="MyAccount top-item relative">
-                  <a
-                    href="#"
-                    className="menu-pad inline-block cursor-pointer px-4"
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0 translate-y-1"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
                   >
-                    My Account ▾
-                  </a>
-                  <div className="sub-item shadow-darker text-graypurpledark invisible absolute left-2 whitespace-nowrap rounded-md bg-white opacity-0 transition-all">
-                    <span
-                      id="loginlink"
-                      className="hover:bg-primary block cursor-pointer rounded-t-md border-b border-gray-200 py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                      data-featherlight="#login-options-modal"
-                      style={{ paddingRight: '4.5rem' }}
-                    >
-                      Login
-                    </span>
-                    <span
-                      className="hover:bg-primary block cursor-pointer rounded-b-md py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                      onCick="if (!window.__cfRLUnblockHandlers) return false; Overhaul.Misc.ShowRegisterModal()"
-                    >
-                      Sign Up
-                    </span>
-                  </div>
+                    <Popover.Panel className="absolute z-10 -ml-4 mt-3 w-screen max-w-md transform px-2 sm:px-0 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2">
+                      <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                        <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                          {solutions.map((item) => (
+                            <a
+                              key={item.name}
+                              href={item.href}
+                              className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                            >
+                              <item.icon
+                                className="h-6 w-6 flex-shrink-0 text-indigo-600"
+                                aria-hidden="true"
+                              />
+                              <div className="ml-4">
+                                <p className="text-base font-medium text-gray-900">
+                                  {item.name}
+                                </p>
+                                <p className="mt-1 text-sm text-gray-500">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                        <div className="space-y-6 bg-gray-50 px-5 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
+                          {callsToAction.map((item) => (
+                            <div key={item.name} className="flow-root">
+                              <a
+                                href={item.href}
+                                className="-m-3 flex items-center rounded-md p-3 text-base font-medium text-gray-900 hover:bg-gray-100"
+                              >
+                                <item.icon
+                                  className="h-6 w-6 flex-shrink-0 text-gray-400"
+                                  aria-hidden="true"
+                                />
+                                <span className="ml-3">{item.name}</span>
+                              </a>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </Popover.Panel>
+                  </Transition>
+                </>
+              )}
+            </Popover>
+            <div className="flex items-center space-x-7">
+              <a
+                href="#"
+                className="text-base font-medium text-gray-500 hover:text-gray-900"
+              >
+                Pricing
+              </a>
+              <a
+                href="#"
+                className="text-base font-medium text-gray-500 hover:text-gray-900"
+              >
+                Docs
+              </a>
+            </div>
+            <Popover className="relative">
+              {({ open }) => (
+                <>
+                  <Popover.Button
+                    className={classNames(
+                      open ? 'text-gray-900' : 'text-gray-500',
+                      'group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                    )}
+                  >
+                    <span>More</span>
+                    <ChevronDownIcon
+                      className={classNames(
+                        open ? 'text-gray-600' : 'text-gray-400',
+                        'ml-2 h-5 w-5 group-hover:text-gray-500'
+                      )}
+                      aria-hidden="true"
+                    />
+                  </Popover.Button>
+
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0 translate-y-1"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
+                  >
+                    <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
+                      <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                        <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                          {resources.map((item) => (
+                            <a
+                              key={item.name}
+                              href={item.href}
+                              className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
+                            >
+                              <item.icon
+                                className="h-6 w-6 flex-shrink-0 text-indigo-600"
+                                aria-hidden="true"
+                              />
+                              <div className="ml-4">
+                                <p className="text-base font-medium text-gray-900">
+                                  {item.name}
+                                </p>
+                                <p className="mt-1 text-sm text-gray-500">
+                                  {item.description}
+                                </p>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                        <div className="bg-gray-50 px-5 py-5 sm:px-8 sm:py-8">
+                          <div>
+                            <h3 className="text-base font-medium text-gray-500">
+                              Recent Posts
+                            </h3>
+                            <ul role="list" className="mt-4 space-y-4">
+                              {recentPosts.map((post) => (
+                                <li
+                                  key={post.id}
+                                  className="truncate text-base"
+                                >
+                                  <a
+                                    href={post.href}
+                                    className="font-medium text-gray-900 hover:text-gray-700"
+                                  >
+                                    {post.name}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div className="mt-5 text-sm">
+                            <a
+                              href="#"
+                              className="font-medium text-indigo-600 hover:text-indigo-500"
+                            >
+                              View all posts
+                              <span aria-hidden="true"> &rarr;</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </Popover.Panel>
+                  </Transition>
+                </>
+              )}
+            </Popover>
+          </Popover.Group>
+          <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+            <a
+              href="#"
+              className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900"
+            >
+              Sign in
+            </a>
+            <a
+              href="#"
+              className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+            >
+              Sign up
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <Transition
+        as={Fragment}
+        enter="duration-200 ease-out"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="duration-100 ease-in"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+      >
+        <Popover.Panel
+          focus
+          className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+        >
+          <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+            <div className="px-5 pt-5 pb-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <img
+                    className="h-8 w-auto"
+                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    alt="Your Company"
+                  />
                 </div>
-                <div className="MultiCurrency top-item relative">
-                  <a href="#" className="menu-pad inline-block px-4">
-                    USD ▾
-                  </a>
-                  <div className="sub-item shadow-darker text-graypurpledark invisible absolute left-2 whitespace-nowrap rounded-md bg-white opacity-0 transition-all">
-                    <a
-                      href=""
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      USD
-                    </a>
-                    <a
-                      href=""
-                      className="hover:bg-primary block py-2.5 pl-2.5 pr-6 transition-all hover:text-white"
-                    >
-                      ZWL
-                    </a>
-                  </div>
+                <div className="-mr-2">
+                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span className="sr-only">Close menu</span>
+                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                  </Popover.Button>
                 </div>
               </div>
+              <div className="mt-6">
+                <nav className="grid gap-y-8">
+                  {solutions.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
+                    >
+                      <item.icon
+                        className="h-6 w-6 flex-shrink-0 text-indigo-600"
+                        aria-hidden="true"
+                      />
+                      <span className="ml-3 text-base font-medium text-gray-900">
+                        {item.name}
+                      </span>
+                    </a>
+                  ))}
+                </nav>
+              </div>
             </div>
-          </nav>
-        </div>
-      </header>
-    </>
+            <div className="space-y-6 py-6 px-5">
+              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+                <a
+                  href="#"
+                  className="text-base font-medium text-gray-900 hover:text-gray-700"
+                >
+                  Pricing
+                </a>
+
+                <a
+                  href="#"
+                  className="text-base font-medium text-gray-900 hover:text-gray-700"
+                >
+                  Docs
+                </a>
+                {resources.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-base font-medium text-gray-900 hover:text-gray-700"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              <div>
+                <a
+                  href="#"
+                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                >
+                  Sign up
+                </a>
+                <p className="mt-6 text-center text-base font-medium text-gray-500">
+                  Existing customer?{' '}
+                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
+                    Sign in
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </Popover.Panel>
+      </Transition>
+    </Popover>
   )
 }

@@ -7,12 +7,14 @@ import Check from '../components/Check/index'
 const Home = () => {
   return (
     <>
-      <Hero />
-      <Slider />
-      <Check />
-      <Banner />
-      <Marketplace />
-      <Sale />
+      <div>
+        <Hero />
+        {/* <Slider />
+        <Check />
+        <Banner />
+        <Marketplace />
+        <Sale /> */}
+      </div>
     </>
   )
 }
