@@ -4,17 +4,15 @@ import Sale from '../components/Sale/Index'
 import Banner from '../components/Banner/Index'
 import Marketplace from '../components/Marketplace/Index'
 import Check from '../components/Check/index'
+import Footer from '../components/Footer/index'
 const Home = () => {
   return (
     <>
-      <div>
-        <Hero />
-        {/* <Slider />
-        <Check />
-        <Banner />
-        <Marketplace />
-        <Sale /> */}
-      </div>
+      <Hero />
+      <Check />
+      <Banner />
+      <Marketplace />
+      <Sale />
     </>
   )
 }
