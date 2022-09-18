@@ -7,10 +7,11 @@ export default function Hero() {
         <div
           className="vcenterFlex filters-container home relative mt-20 w-full lg:mt-0"
           style={{
-            backgroundImage: `url(images/main.jpg)`,
+            backgroundImage: `url(images/main.png)`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover"
           }}
         >
-          <Header marginLeft="4rem" />
 
           <div className="container">
             <h1 className="HomeBannerText mb-0 text-center text-3xl text-white md:text-4xl xl:mb-4 2xl:text-5xl">
@@ -161,13 +162,7 @@ export default function Hero() {
               </div>
             </form>
           </div>
-          <a
-            href="https://www.facebook.com/barry.lungu"
-            target="_blank"
-            className="absolute bottom-2 right-2 text-xs text-white"
-          >
-            Art by Barry Lungu
-          </a>
+
         </div>
       </div>
     </>

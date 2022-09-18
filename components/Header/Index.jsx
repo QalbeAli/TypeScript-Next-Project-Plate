@@ -4,7 +4,7 @@ import Images from '../../public/images/Images'
 export default function Header() {
   return (
     <>
-      <header className=" header-home flex items-center  justify-between pt-[40rem] ">
+      <header className=" header-home flex items-center  justify-between  ">
         <div
           className="Header container absolute top-0 bg-black"
           style={{ zIndex: '70' }}

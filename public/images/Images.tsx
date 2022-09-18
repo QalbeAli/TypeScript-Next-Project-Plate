@@ -12,8 +12,10 @@ import left from './left.svg'
 import right from './right.svg'
 import insurance from './insurance.png'
 import Banner from './banner.jpg'
-import sale1 from './sale1.jpg'
+import sale1 from './sale1.png'
 import sale2 from './sale2.jpg'
+import bg from './main.png'
+
 export default {
   main,
   property,
@@ -29,5 +31,6 @@ export default {
   insurance,
   Banner,
   sale1,
-  sale2
+  sale2,
+  bg,
 }
